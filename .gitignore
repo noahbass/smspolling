@@ -1,0 +1,6 @@
+.env
+*.db
+*.sqlite
+*.sqlite3
+composer.lock
+vendor

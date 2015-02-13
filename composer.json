@@ -1,0 +1,15 @@
+{
+    "name": "noahbass/smspolling",
+    "description": "An open source text message (sms) poll service",
+    "authors": [
+        {
+            "name": "Noah Bass",
+            "email": "noah@noahbass.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "lichtner/fluentpdo": "dev-master",
+        "vlucas/phpdotenv": "~1.1@dev"
+    }
+}
