@@ -4,7 +4,7 @@ include 'vendor/autoload.php';
 
 Dotenv::load(__DIR__);
 
-include 'libs/googlevoice/GoogleVoice.php';
+include 'libs/Google-Voice-PHP-API/GoogleVoice.php';
 
 // initialize GoogleVoice
 $voice = new GoogleVoice(getenv('EMAIL'), getenv('PASSWORD'));
