@@ -4,4 +4,3 @@
 *.sqlite3
 composer.lock
 vendor
-libs
