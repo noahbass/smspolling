@@ -1,9 +1,9 @@
 <?php
 
 /**
- * responses/foo
+ * responses/list
  *
- * get the poll responses
+ * List out the poll responses
  */
 
 print 'Listing response(s)' . "\n";
