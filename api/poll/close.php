@@ -32,13 +32,20 @@ foreach($argv as $item) {
  */
 $response = $pdo->from('responses')->fetchAll();
 
+// by default the invalid vote count is set to the number of responses
+$valid_votes = 0;
+
 foreach($response as $item) {
     foreach($options as $index => $option) {
         if(strtolower($option['content']) == strtolower($item['content'])) {
             $options[$index]['votes']++;
+            $valid_votes++;
         }
     }
 }
+
+// calculate invalid votes
+$invalid = count($response) - $valid_votes;
 
 
 /**
@@ -52,7 +59,7 @@ usort($options, function($a, $b) {
 });
 
 // setup table display
-$table = "| %-10.10s | %-5.5s | %-10.10s |\n";
+$table = "| %-15.15s | %-5.5s | %-10.10s |\n";
 printf($table, 'Content', 'Votes', 'Percentage');
 
 foreach($options as $option) {
@@ -60,3 +67,5 @@ foreach($options as $option) {
 
     printf($table, $option['content'], $option['votes'], $percentage);
 }
+
+printf($table, 'invalid vote(s)', $invalid, ($invalid / count($response)) * 100 . '%');
